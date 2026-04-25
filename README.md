@@ -1,19 +1,7 @@
 # DecryptScript
 
-Bu repo, obfuscate edilmiş Lua dosyasının okunabilir hale getirilmiş sürümünü içerir.
+Bu repoda yalnızca okunabilir hale getirilmiş Lua kodu bulunur:
 
-## Dosyalar
+- `Decryptthis` → düzenlenmiş/okunabilir sürüm.
 
-- `Decryptthis`: Orijinal (tek satır, obfuscate edilmiş) dosya.
-- `Decryptthis_readable.lua`: Otomatik formatlanmış, insan tarafından okunabilir sürüm.
-- `tools/make_readable_lua.py`: `Decryptthis` gibi tek satır Lua kodlarını satırlayıp girintileyen script.
-
-## Okunabilir sürümü yeniden üretmek
-
-```bash
-python tools/make_readable_lua.py Decryptthis -o Decryptthis_readable.lua
-```
-
-## Not
-
-Bu adım **tam VM deobfuscation** değildir; ama kodu incelemeyi mümkün kılan okunabilir bir sürüm üretir.
+Not: Kod VM-obfuscation yapısında olduğu için tamamen orijinal kaynak haline dönüştürülmemiştir; ancak artık satırlı ve incelenebilir durumdadır.
