@@ -1,21 +1,19 @@
 # DecryptScript
 
-Bu repoda tek satıra obfuscate edilmiş bir Lua dosyası (`Decryptthis`) var.
+Bu repo, obfuscate edilmiş Lua dosyasının okunabilir hale getirilmiş sürümünü içerir.
 
-## Hızlı kullanım
+## Dosyalar
 
-Aşağıdaki yardımcı script, obfuscation'ın ilk aşamasında çözülen `q` tablosunu çıkarır:
+- `Decryptthis`: Orijinal (tek satır, obfuscate edilmiş) dosya.
+- `Decryptthis_readable.lua`: Otomatik formatlanmış, insan tarafından okunabilir sürüm.
+- `tools/make_readable_lua.py`: `Decryptthis` gibi tek satır Lua kodlarını satırlayıp girintileyen script.
+
+## Okunabilir sürümü yeniden üretmek
 
 ```bash
-python tools/decrypt_lua_vm.py Decryptthis -o decoded_q_table.txt
+python tools/make_readable_lua.py Decryptthis -o Decryptthis_readable.lua
 ```
 
-> Not: Script'in çalışması için sistemde `lua` veya `luajit` kurulu olmalı.
+## Not
 
-## Ne işe yarar?
-
-- `Decryptthis` içindeki başlangıç bootstrap bloğunu izole eder.
-- VM gövdesi çalışmadan önce string çözümleme kısmını çalıştırır.
-- Çözülen tabloyu dosyaya yazar.
-
-Bu çıktı, kalan VM akışını manuel olarak geri okumayı ciddi şekilde kolaylaştırır.
+Bu adım **tam VM deobfuscation** değildir; ama kodu incelemeyi mümkün kılan okunabilir bir sürüm üretir.
